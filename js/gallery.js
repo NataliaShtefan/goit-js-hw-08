@@ -94,7 +94,10 @@ function createGallery (arr) {
 function handleClick (event) {
     event.preventDefault();
 
-    const target = event.target.closest(".gallery-image")
+    const target = event.target.closest(".gallery-image");
+    if (!target) {
+        return;
+    }
     const imageSrc = target.dataset.source;
     const imageAlt = target.alt;
 
